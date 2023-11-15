@@ -1,0 +1,17 @@
+<!-- <div mat-dialog-content>
+  <div class="container">
+    <div class="notification">
+      <p>Welcome back, RockyCott</p>
+      <span class="progress"></span>
+    </div>
+  </div>
+</div> -->
+<div mat-dialog-content>
+  <mat-spinner *ngIf="spinner"></mat-spinner>
+  <div class="container" *ngIf="!spinner">
+    <div class="notification">
+      <p>Bienvenido, {{data.tipo}} {{ data.name }} 👋</p>
+      <span class="progress"></span>
+    </div>
+  </div>
+</div>

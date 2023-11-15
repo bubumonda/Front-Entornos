@@ -1,0 +1,3 @@
+[submodule "src/environments"]
+	path = src/environments
+	url = https://gitlab.com/ukyoTeam/environments.git

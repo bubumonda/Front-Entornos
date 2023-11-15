@@ -1,0 +1,80 @@
+<app-header-logo></app-header-logo>
+<form [formGroup]="form" class="form-login-auth">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Usuario</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="usuario"
+      placeholder="Digite un usuario"
+    />
+    <mat-error
+      *ngIf="
+        this.form.controls.usuario.hasError('required') &&
+        !form.controls.usuario.hasError('existe')
+      "
+    >
+      Un nombre de usuario es <strong>requerido</strong>
+    </mat-error>
+    <mat-error
+      *ngIf="
+        !form.controls.usuario.hasError('required') &&
+        form.controls.usuario.hasError('existe')
+      "
+    >
+      Ya existe un usuario con esta información
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      placeholder="Digite el email"
+    />
+    <mat-error
+      *ngIf="
+        form.controls.email.hasError('email') &&
+        !form.controls.email.hasError('required')
+      "
+    >
+      Por favor ingrese un correo valido
+    </mat-error>
+    <mat-error *ngIf="form.controls.email.hasError('required')">
+      Email es <strong>requerido</strong>
+    </mat-error>
+    <mat-error
+      *ngIf="
+        form.controls.email.hasError('existe') &&
+        !form.controls.email.hasError('required') &&
+        !form.controls.email.hasError('email')
+      "
+    >
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password" />
+  </mat-form-field>
+  <div class="access-row">
+    <button
+      class="btn registroButton"
+      mat-raised-button
+      type="button"
+      (click)="registrar()"
+    >
+      Registrarse
+    </button>
+    <mat-progress-bar mode="indeterminate" *ngIf="registrando"></mat-progress-bar>
+    <div class="loguearse">
+      ¿Ya tienes una cuenta?
+      <a class="forgot-pass" [routerLink]="['../login']">Ingresar</a>
+      <br />
+    </div>
+    <br />
+    <div class="regresar">
+      <a class="forgot-pass" href="#">Ir a inicio</a> 
+    </div>
+  </div>
+</form>

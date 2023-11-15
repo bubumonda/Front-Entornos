@@ -1,0 +1,43 @@
+
+
+<div class="portada">
+  <mat-card class="wrapper">
+    <div class="row page">
+    <div class="c-content">
+    <div class="wrapper-content">
+    <section class="container">
+      <div class="align-items-center mb-4">
+        <h1>
+          {{currentDataset.id_dataset?'Editar':'Crear'}}
+          Dataset
+        </h1>
+          <span class="fw-bold w-auto">Formulario de Datasets</span>
+      </div>
+      <!-- <div class="divider"></div> -->
+
+      <form  id="form-cliente" class="mt-4" [formGroup]="form!" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+              <label for="dataset-nombre">Nombre</label>
+              <input type="text" class="form-control" formControlName="nombre" name="dataset-nombre">
+          </div>
+          <div class="mb-3">
+              <label for="dataset-comentarios" class="form-label">Comentarios</label>
+              <input type="text" class="form-control" formControlName="comentarios"  name="dataset-comentarios">
+          </div>
+           <div class="mb-3">
+              <label for="dataset-descripcion" class="form-label">Descripcion</label>
+              <input type="text" class="form-control" formControlName="descripcion" name="dataset-descripcion">
+          </div>
+          <button type="submit" class="btn btn-primary"  (click)="onSubmit()">Guardar</button>
+          <button class="btn btn-danger" [routerLink]="['/home']">Volver</button>
+      </form>
+
+    </section>
+
+    </div>
+    </div>
+    </div>
+
+  </mat-card>
+
+</div>

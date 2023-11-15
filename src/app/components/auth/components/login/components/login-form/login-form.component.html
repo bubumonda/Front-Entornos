@@ -1,0 +1,63 @@
+<app-header-logo></app-header-logo>
+<form [formGroup]="form" class="form-login-auth">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Username</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="username"
+      placeholder="Digite el username"
+    />
+    <mat-error
+      *ngIf="
+        form.controls.username.hasError('minLength') &&
+        !form.controls.username.hasError('required') &&
+        !form.controls.username.hasError('incorrect')
+      "
+    >
+      Por favor ingrese un usuario valido
+    </mat-error>
+    <mat-error
+      *ngIf="
+        form.controls.username.hasError('minLength')&&
+        form.controls.username.hasError('required') &&
+        !form.controls.username.hasError('incorrect')
+      "
+    >
+      Email es <strong>requerido</strong>
+    </mat-error>
+    <mat-error *ngIf="form.controls.username.hasError('incorrect')">
+      Usuario o contraseña incorrectos
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password" placeholder="Digite la contraseña"/>
+  </mat-form-field>
+  <div class="access-row">
+    <div class="forgot-pass-cell">
+      <a class="forgot-pass" (click)="goForgotPassword.emit()"
+        >¿Se te olvidó tu contraseña?</a
+      >
+      <br />
+    </div>
+    <button
+      class="btn loginButton"
+      mat-raised-button
+      (click)="ingresar()"
+      type="button"
+    >
+      Ingresar
+    </button>
+    <div class="registrarse">
+      ¿No tienes una cuenta?
+      <!-- agregarle [routerLink]="['../registration']" -->
+      <a class="forgot-pass" [routerLink]="['../registration']">registrarse</a>
+      <br />
+    </div>
+    <br />
+    <div class="regresar">
+      <a class="forgot-pass" href="#">Ir a inicio</a>
+    </div>
+  </div>
+</form>

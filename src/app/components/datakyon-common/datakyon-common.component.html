@@ -1,0 +1,11 @@
+<div id="bgImageAuth" [ngClass]="{'bg-image1': ruta, 'bg-image2': !ruta}"></div>
+<mat-card class="wrapper">
+  <div class="row auth-page">
+    <div class="c-content">
+      <div class="wrapper-content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+    <div [ngClass]="{'portada1': ruta, 'portada2': !ruta}"></div>
+  </div>
+</mat-card>

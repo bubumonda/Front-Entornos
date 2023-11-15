@@ -1,0 +1,68 @@
+.notification {
+    position: relative;
+    display: inline-block;
+    max-width: 300px;
+    padding: 20px 15px;
+    border-radius: 4px;
+    background-color: #141619;
+    color: #f6f5f9;
+    box-shadow: 0 1px 10px
+    rgba(0, 0, 0, .1);
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    animation: fade 4s linear forwards;
+}
+
+.progress {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, #529bdb, #3250bf);
+    border-radius: 4px;
+    overflow: hidden;
+    animation: progress 1s .25s linear forwards;
+}
+
+@keyframes fade {
+    5% {
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+    }
+    90% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+}
+
+@keyframes progress {
+    to {
+        width: calc(100% - 10px);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+
+::ng-deep .mat-dialog-container {
+    padding: 0px !important;
+    background-color: transparent;
+    overflow: hidden;
+}

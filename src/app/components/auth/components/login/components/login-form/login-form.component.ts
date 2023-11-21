@@ -75,10 +75,11 @@ export class LoginFormComponent implements OnInit {
         )
         .subscribe(res=>{
           if(res){
+            console.log(res);
             this.openDialog(username, '');
             localStorage.setItem('token', res.token);
             localStorage.setItem('id',res.id);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/home/crud-datasets']);
           }else{
             this.numberTries.tries++;
             if (this.numberTries.tries === 3) {

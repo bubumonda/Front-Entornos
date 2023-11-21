@@ -71,7 +71,7 @@ export class RegistrationFormComponent implements OnInit {
           }else{
             localStorage.setItem('token', res.token);
             localStorage.setItem('id',res.id);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/crud-datasets']);
           }
         })
 

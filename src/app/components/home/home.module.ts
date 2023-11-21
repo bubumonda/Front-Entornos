@@ -7,12 +7,14 @@ import { MatCardModule } from '@angular/material/card';
 import { FormDatasetsComponent } from './components/form-datasets/form-datasets.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LayoutComponent } from './components/layout/layout.component';
 
 
 @NgModule({
   declarations: [
     CrudDatasetsComponent,
-    FormDatasetsComponent
+    FormDatasetsComponent,
+    LayoutComponent
   ],
   imports: [
     CommonModule,

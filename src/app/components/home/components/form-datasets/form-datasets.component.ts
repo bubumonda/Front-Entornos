@@ -59,6 +59,11 @@ export class FormDatasetsComponent implements OnInit {
       const {nombre, comentarios, descripcion} = this.form?.value;
       this.crudDatasetsService.editDataSet(this.currentDataset.id_dataset,{nombre, comentarios, descripcion})
         .subscribe(()=> {})
+        this.form?.reset();
+      setTimeout(() => {
+        this.router.navigateByUrl('/home/crud-datasets');
+
+      }, 1000);
       return;
     }
     const {nombre, comentarios, descripcion} = this.form?.value;

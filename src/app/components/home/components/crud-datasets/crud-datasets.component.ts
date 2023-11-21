@@ -3,6 +3,7 @@ import { DataSet } from '../../model/dataset.interface';
 import { CrudDatasetsService } from '../../services/crud-datasets.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-crud-datasets',
   templateUrl: './crud-datasets.component.html',
@@ -30,10 +31,11 @@ export class CrudDatasetsComponent implements OnInit {
 
   deleteData(id_dataset:number){
     this.crudDataSetsService.deleteDataSet(id_dataset)
-    .subscribe(res=>console.log(res))
+    .subscribe();
 
-    this.loadData();
-    location.reload();
+    this.dataSets = this.dataSets.filter((el)=> el.id_dataset !==id_dataset );
+    // this.loadData();
+    // location.reload();
 
   }
 

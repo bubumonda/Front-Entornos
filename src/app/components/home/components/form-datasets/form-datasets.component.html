@@ -1,10 +1,4 @@
 
-
-<div class="portada">
-  <mat-card class="wrapper">
-    <div class="row page">
-    <div class="c-content">
-    <div class="wrapper-content">
     <section class="container">
       <div class="align-items-center mb-4">
         <h1>
@@ -29,15 +23,8 @@
               <input type="text" class="form-control" formControlName="descripcion" name="dataset-descripcion">
           </div>
           <button type="submit" class="btn btn-primary"  (click)="onSubmit()">Guardar</button>
-          <button class="btn btn-danger" [routerLink]="['/home']">Volver</button>
+          <button class="btn btn-danger" [routerLink]="['./home']">Volver</button>
       </form>
 
     </section>
 
-    </div>
-    </div>
-    </div>
-
-  </mat-card>
-
-</div>

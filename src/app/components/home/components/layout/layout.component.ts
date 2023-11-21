@@ -22,6 +22,10 @@ export class LayoutComponent implements OnInit, AfterViewChecked {
   ngOnInit(): void {
   }
 
+  onLogOut(){
+    localStorage.clear();
+    this.router.navigateByUrl('/auth/login');
+  }
 
 
 }
